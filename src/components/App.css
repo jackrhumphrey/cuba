@@ -1,0 +1,54 @@
+body {
+  background-color: #ffac79;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  margin: 80px 0px;
+}
+
+.inner {
+  font-size: 6em;
+  line-height: 1em;
+  color: #fff;
+  font-family: 'Nanum Gothic', sans-serif;
+  padding: 0px;
+  margin: auto;
+}
+
+.nav {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 2.5em;
+  line-height: 1em;
+  padding: 0px 0px;
+  text-align: center;
+  margin: 80px 0px;
+  word-spacing: 10px;
+}
+
+.nav a {
+  font-weight: bold;
+  color: #ff4d1a;
+}
+
+.active {
+  color: #ff7f46!important;
+}
+
+.ui.container {
+  margin: 80px 0px;
+}
+
+@media screen and (max-width: 767px) {
+  .ui.container {
+    margin: 0px!important;
+  }
+  .inner span {
+    display: block;
+  }
+}
+
+.content{
+  font-family: 'Nanum Gothic', sans-serif;
+}
