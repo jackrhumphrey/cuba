@@ -7,7 +7,7 @@ class About extends Component {
       <div className="about">
         <p>About your host</p>
         <p>
-          I am a self iuhiuhuih confessed foodie and I am passionate about dining culture
+          I am a self confessed foodie and I am passionate about dining culture
           in Wellington. As a local I know all the neighborhood favourites and
           hidden gems. I am a Maitre'D in a restaurant and in my spare time I
           write recipes for a magazine column. Food is more than a hobby for me,
