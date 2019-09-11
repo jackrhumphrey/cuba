@@ -5,7 +5,7 @@ class Testimonials extends Component {
   render() {
     return (
       <div className="testimonials">
-        <p>Testimonials</p>
+        <p>Under construction</p>
       </div>
     );
   }
