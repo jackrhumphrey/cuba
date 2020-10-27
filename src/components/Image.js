@@ -15,10 +15,10 @@ class Image extends React.Component {
 
         return (
             <div className={"margin" + (loaded ? " loaded" : "")}>
-                <a href={image.link}>
+                <a href={image.permalink}>
                     <div className="border">
                         <div className="image">
-                            <img onLoad={this.onLoad} src={image.images.standard_resolution.url} />
+                            <img onLoad={this.onLoad} src={image.media_url} />
                         </div>
                     </div>
                 </a>

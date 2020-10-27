@@ -1,37 +1,40 @@
-import './Instagram.css';
-import React, { Component } from 'react';
-import axios from 'axios';
-import Image from './Image';
+import "./Instagram.css";
+import React, { Component } from "react";
+import axios from "axios";
+import Image from "./Image";
 
 class Instagram extends Component {
+  state = {
+    images: [],
+  };
 
-    state = {
-        images: [],
-    };
+  componentDidMount() {
+    let token =
+      "IGQVJYOElHSjNDZADdpTUtwQk11djJ6SHh5aDczX0RwakltazRIT1ptaUpzX29WUUk3NFdLMEtoWEhSWVNDOG10OW80a1FscU4yUTFCSXFmRHUwY3FMZAWRHMmVsZAUVOU1pRNE85bGZA5dGNBaDQ5WGpmSQZDZD";
 
-    componentDidMount() {
-        let token = '11305957070.1677ed0.75d09df87a6a4ed5a01b14d2773f7290';
-        let num_photos = 100;
-
-        axios.get('https://api.instagram.com/v1/users/self/media/recent/?access_token=' + token + '&count=' + num_photos)
-            .then(res => {
-                console.log(res.data.data[0].images);
-                this.setState({ images: res.data.data });
-            })
-            .catch(err => {
-                console.log(err)
-            })
-
-    }
-    render() {
-        return (
-            <div className="instagram">
-                {this.state.images.map((image) => {
-                    return <Image key={image.id} image={image} />
-                })}
-            </div>
-        )
-    }
-};
+    axios
+      .get(
+        "https://graph.instagram.com/me/media?fields=media_url,permalink&access_token=" +
+          token
+      )
+      .then((res) => {
+        console.log(res);
+        // console.log(res.data.data[0].images);
+        this.setState({ images: res.data.data });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  render() {
+    return (
+      <div className="instagram">
+        {this.state.images.map((image) => {
+          return <Image key={image.id} image={image} />;
+        })}
+      </div>
+    );
+  }
+}
 
 export default Instagram;
