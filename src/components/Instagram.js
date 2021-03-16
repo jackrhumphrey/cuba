@@ -10,7 +10,7 @@ class Instagram extends Component {
 
   componentDidMount() {
     let token =
-      "IGQVJWYThGVEtVOUlnMjhmRHd1ZAU9JblhpRFl2SDBDb0hqWWFsVEZAfc3djOHRDOGFXaFViT3FkODBKRDZA0THFBcjNXdnZAPOXMwc1FsNVhyVjNDTmhPUWxFcWNNdlFnY0hBQ1BSd2FScmR5M1dBX1ZAZATgZDZD";
+      "IGQVJVX2x4aEl0cjlWZA1BqeF9Gdk5wdWRuTFNFOGJhME1kc1ZAuRndkNUQ5YTd1UnZAZATE1FdDc5WEl3TUlQeHpkRnhHcUZAJVTNJN0huNm5CWDQ5RnZAGc1RCdW1mTlFIRTFfOUxOQm92RHV3UEJlTm1EVgZDZD";
 
     axios
       .get(
@@ -18,7 +18,7 @@ class Instagram extends Component {
           token
       )
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         // console.log(res.data.data[0].images);
         this.setState({ images: res.data.data });
       })
