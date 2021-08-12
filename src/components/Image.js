@@ -12,13 +12,14 @@ class Image extends React.Component {
     render() {
         const { image } = this.props;
         const {loaded } = this.state;
+        console.log(image);
 
         return (
             <div className={"margin" + (loaded ? " loaded" : "")}>
                 <a href={image.permalink}>
                     <div className="border">
                         <div className="image">
-                            <img onLoad={this.onLoad} src={image.media_url} />
+                            <img loading="lazy" onLoad={this.onLoad} src={image.media_url} />
                         </div>
                     </div>
                 </a>
