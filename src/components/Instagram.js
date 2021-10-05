@@ -10,7 +10,7 @@ class Instagram extends Component {
 
   componentDidMount() {
     let token =
-      "IGQVJVczFYMW9EVWtmdl84QnlSemJjSXFfZAWY5b0pnazRDaS1FLTZAwdFhuSXp5RGZAPYnZASMTdfMjVDV2daVVRGQUZAJMHRHNTR1Qk9LYUlTbmlkTWRXZA1dOb3FkTXJyS3czbmpMdlVyYmQzd1BVTG8wVAZDZD";
+      "IGQVJVYkZAEUk82aTYtdF9xWGJNZAG9USkQ5dnhZAUThGdkVGTDdlTy1xNWc5NU8xRS1xS2RCRUdXSXU4c3poWEJiQ1o1QkdoU2lfMmtxb1Q4eGxRQ3pndEctR2FQRWdzZAWNxMkFJb09BRUZABWUc5VzVjcgZDZD";
 
     axios
       .get(
