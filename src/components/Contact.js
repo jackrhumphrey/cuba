@@ -1,6 +1,12 @@
 import './Contact.css';
 import React, { Component } from 'react';
 
+const encode = (data) => {
+    return Object.keys(data)
+        .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
+};
+
 class Contact extends Component {
 
     constructor(props) {
@@ -12,11 +18,28 @@ class Contact extends Component {
         }
     }
 
+    handleSubmit(e) {
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...this.state }),
+        })
+            .then(() => {
+                this.setState({ name: "", email: "", message: "" });
+                alert("Thank you for your message!");
+            })
+            .catch((error) => alert(error));
+
+        e.preventDefault();
+    };
+
+
     render() {
 
         return (
             <div className="contact">
-                <form method="POST" action="https://formspree.io/reservations@cubastreetculinarytours.com" className="ui form">
+                <form onSubmit={this.handleSubmit} className="ui form">
+                    <input type="hidden" name="form-name" value="contact" />
                     <div className="field">
                         <label>Name</label>
                         <input type="text" id="name" name="Name"
@@ -26,7 +49,7 @@ class Contact extends Component {
                     </div>
                     <div className="field">
                         <label>Email</label>
-                        <input type="email" id="email" name="_replyto"
+                        <input type="email" id="email" name="email"
                             value={this.state.email}
                             onChange={e => this.setState({ email: e.target.value })}
                         />
@@ -39,7 +62,7 @@ class Contact extends Component {
                             value={this.state.message}
                         ></textarea>
                     </div>
-                    <input className="ui button" type="submit" value="Send" />
+                    <input className="ui button" type="submit" />
                 </form >
             </div>
         )
