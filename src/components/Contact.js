@@ -19,6 +19,7 @@ class Contact extends Component {
     }
 
     handleSubmit(e) {
+        console.log(e);
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -33,16 +34,15 @@ class Contact extends Component {
         e.preventDefault();
     };
 
-
     render() {
 
         return (
             <div className="contact">
-                <form onSubmit={this.handleSubmit} className="ui form">
+                <form onSubmit={e => this.handleSubmit(e)} className="ui form">
                     <input type="hidden" name="form-name" value="contact" />
                     <div className="field">
                         <label>Name</label>
-                        <input type="text" id="name" name="Name"
+                        <input type="text" id="name" name="name"
                             value={this.state.name}
                             onChange={e => this.setState({ name: e.target.value })}
                         />
@@ -54,7 +54,6 @@ class Contact extends Component {
                             onChange={e => this.setState({ email: e.target.value })}
                         />
                     </div>
-                    <input type="hidden" name="_subject" value="Cuba Street Culinary" />
                     <div className="field">
                         <label>Message</label>
                         <textarea id="message" name="message"
